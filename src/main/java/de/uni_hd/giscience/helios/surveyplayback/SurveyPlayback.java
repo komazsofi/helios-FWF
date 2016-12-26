@@ -34,7 +34,7 @@ public class SurveyPlayback extends Simulation {
 		cal.getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
 		mDateString = sdf.format(cal.getTime());
-		mOutputFilePathString = "output/" + File.separator + "Survey Playback" + File.separator + mSurvey.name + File.separator + mDateString + File.separator;
+		mOutputFilePathString = "output/" + File.separator;
 		// ######## END Create part of the leg point cloud file path #######
 
 		this.setScanner(mSurvey.scanner);
@@ -121,7 +121,7 @@ public class SurveyPlayback extends Simulation {
 	}
 
 	public String getCurrentOutputPath() {
-		return mOutputFilePathString + File.separator + "points" + File.separator + "leg" + String.format(mFormatString, getCurrentLegIndex()) + "_points.xyz";
+		return mOutputFilePathString + File.separator + mSurvey.name + "leg" + String.format(mFormatString, getCurrentLegIndex()) + "_points.xyz";
 	}
 
 	@Override
